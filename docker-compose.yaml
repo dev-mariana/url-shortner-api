@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  postgres:
+    image: bitnami/postgresql
+    container_name: postgres
+    ports:
+      - "5434:5432"
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_DB=url-shortener
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
