@@ -1,10 +1,8 @@
-import * as dotenv from "dotenv";
 import { app } from "./app";
-
-dotenv.config();
+import { env } from "./infra/env";
 
 try {
-  app.listen({ port: Number(process.env.PORT) }).then(() => {
+  app.listen({ port: env.PORT }).then(() => {
     app.log.info("Server is running...");
   });
 } catch (error) {
